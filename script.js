@@ -10,5 +10,13 @@ $(function () {
     var timeBlockID = $(this).attr("id");
     var currentHour = dayjs().format("H");
     var blockHour = parseInt(timeBlockID.split("-")[1]);
-  })
-});
+
+    if (blockHour < currentHour) {
+      $(this).addClass("past");
+    } else if (blockHour == currentHour) {
+      $(this).addClass("present");
+    } else {
+      $(this).addClass("future");
+    }
+  });
+})

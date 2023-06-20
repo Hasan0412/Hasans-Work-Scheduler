@@ -25,4 +25,7 @@ $(function () {
     var savedInput = localStorage.getItem(timeBlockID);
     $(this).find("textarea").val(savedInput);
   });
-})
+
+  var currentDate = dayjs().format("MMMM D, YYYY");
+  $("#currentDay").text(currentDate);
+});

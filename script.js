@@ -19,4 +19,10 @@ $(function () {
       $(this).addClass("future");
     }
   });
+
+  $(".time-block").each(function() {
+    var timeBlockID = $(this).attr("id");
+    var savedInput = localStorage.getItem(timeBlockID);
+    $(this).find("textarea").val(savedInput);
+  });
 })
